@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="container">
+    <button onclick="handleButtonClick()">Yeni</button>
+    <p id="createnew"></p>
+</div>
+
+<a href="@Url.Action("Yeniservis", "Home")" class="btn btn-primary">Yeni</a>
+
+<div class="container">
+    <h2>üstteki arama şeysi</h2>
+    <input type="text" id="userInput" placeholder="Enter something...">
+    <button onclick="handleButtonClick()">Submit</button>
+    <p id="output"></p>
+
+
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic HTML Table with JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Table</h1>
+        <div class="input-container">
+            <input type="number" id="rows" min="1" placeholder="Number of Rows">
+            <button onclick="createTable()">Create Table</button>
+        </div>
+        <table id="myTable">
+            <thead>
+                <tr id="headerRow">
+                    <th>Servis Adı</th>
+                    <th>Method</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <!-- Table will be dynamically generated here -->
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+            table-layout: fixed;
+            display: grid;
+            grid-template-columns: 100% 100% 100% 5% 5%;
+        }
+
+           
+        /*header*/
+        th {
+            border: 1px solid #aaaaaa;
+            text-align: left;
+            padding: 8px;
+            background-color: #dddddd;
+        }
+
+       
+        /* data cell */
+        td:nth-child(1),
+        td:nth-child(2),
+        td:nth-child(3) {
+            border: 1px solid #aaaaaa;
+            background-color: #eeeeee;
+            padding: 10px;
+           
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <h2>HTML Table</h2>
+
+    <table>
+        <tr>
+            <th>Servis adı</th>
+            <th>Method</th>
+            <th>Açıklama</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>
