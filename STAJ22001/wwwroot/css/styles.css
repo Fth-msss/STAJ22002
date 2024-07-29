@@ -43,16 +43,47 @@ input[type=number] {
 
 /*custom from now on*/
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    height: 100%;
-    table-layout: fixed;
-    display: grid;
-    grid-template-columns: 100% 100% 100% 5% 5%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.container {
+    display: block;
+    margin-bottom: 10px; /* Add some space between the divs */
+    padding: 20px;
 }
+
+.container-maincontainer
+{
+
+
+}
+
+
+
+.input-searchbar
+{
+    float:left;
+    height:40px;
+    border-color:gray;
+    border-width:1px;
+    border-radius:3px;
+}
+
+    .input-searchbar:focus {
+        
+        outline-width:2px;
+      
+    }
+
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: fit-content !important;
+        height: 100%;
+        table-layout: fixed;
+        display: grid;
+        grid-template-columns: 100% 100% 100% 5% 5%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: left;
+    }
 /*header*/
 th {
     border: none; /* Remove border for headers */
@@ -83,10 +114,7 @@ td:nth-child(3) {
 
 
 
-td:last-child {
-    background-color: transparent;
-    text-align: center;
-}
+
 
 
 
@@ -98,24 +126,35 @@ tr:nth-child(even) {
     background-color: #F2F2F2;
 }
 
+
+
 tr:last-child td {
     border-bottom: none;
-
+    
 }
 
 tr:nth-child(6) {
     border-right:none;
     border-bottom: none;
+
 }
 
 
 
 
 
+.btn-group {
+
+    gap: 0.2rem; /* Adjust the gap as needed */
+    margin-left:5px;
+    float: left;
+
+}
 
 
-/* CSS */
+
 .button-45 {
+    width: fit-content;
     align-items: center;
     background-color: #FFE7E7;
     background-position: 0 0;
@@ -140,6 +179,7 @@ tr:nth-child(6) {
     touch-action: manipulation;
     white-space: nowrap;
     word-break: break-word;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 0px 1px 0 inset;
 }
 
 .button-45:active,
@@ -149,12 +189,6 @@ tr:nth-child(6) {
 }
 
 
-.button-45:active {
-    background-color: #D33A2C;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-    color: #FFFFFF;
-}
-
 .button-45:hover {
     background-color: #FFE3E3;
     border-color: #FAA4A4;
@@ -163,7 +197,5 @@ tr:nth-child(6) {
     .button-45:active:hover,
     .button-45:focus:hover,
     .button-45:focus {
-        background-color: gray;
-        box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-        color: #FFFFFF;
+        color: black;
     }

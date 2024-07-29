@@ -20,7 +20,9 @@ namespace STAJ22001.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            var TestDataModel = new TestDataModel("Fatih", 23123, "123 TL", 123432);
+
+            return View(TestDataModel);
         }
 
         public IActionResult Anasayfa()
