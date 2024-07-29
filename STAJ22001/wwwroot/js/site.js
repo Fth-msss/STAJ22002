@@ -1,10 +1,4 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-//table making
-
+﻿
 var tableData = [];
 
 function createTable() {
@@ -41,21 +35,6 @@ function createTable() {
        
     }
 
-    // Create table rows
-    //for (var i = 0; i < rows; i++) {
-    //    var rowData = [];
-    //    var row = document.createElement("tr");
-    //    for (var j = 0; j < columns; j++) {
-    //        var cell = document.createElement("td");
-    //        cell.setAttribute("contenteditable", "true");
-    //        cell.setAttribute("class", "editable-cell");
-    //        cell.addEventListener("input", updateCell);
-    //        rowData.push("");
-    //        row.appendChild(cell);
-    //    }
-    //    table.appendChild(row);
-    //    tableData.push(rowData);
-    //}
     
 }
 

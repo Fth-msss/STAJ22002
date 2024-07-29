@@ -3,4 +3,79 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+
+
+
+</head>
+<body></body>
+</html>
+
+
+
+<a href="@Url.Action("Yeniservis", "Home")" class="button-45">Yeni</a>
+
+
+<div class="container">
+    <h2>Üstteki Arama Şeysi</h2>
+    <input type="text" id="userInput" placeholder="Enter something...">
+    <button onclick="searchButtonClick()">Submit</button>
+    <p id="searchButton"></p>
+</div>
+
+
+<div class="container">
+    <h2>Static HTML Table</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>Servis Adı</th>
+                <th>Method</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>This one is very long this one is very long this one is very longer</td>
+                <td>comically long input comically long input comically long input comically long input comically long input</td>
+                
+                <td>
+                    <button class="button-45" onclick="handleButtonClick()">
+                    <i class="bi bi-pencil"></i> </button>
+                    <button class="button-45" onclick="handleButtonClick()">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}

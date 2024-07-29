@@ -38,5 +38,15 @@ namespace STAJ22001.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult CustomerInfo()
+        {
+            var TestDataModel = new TestDataModel("Fatih", 23123, "123 TL", 123432);
+
+            return View(TestDataModel);
+        }
+
+
+
     }
 }
