@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "CustomerInfo";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Information</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Customer Name</th>
+                <td>@Model.CustomerName</td>
+            </tr>
+            <tr>
+                <th>Customer ID</th>
+                <td>@Model.CustomerId</td>
+            </tr>
+            <tr>
+                <th>Balance</th>
+                <td>@Model.Balance</td>
+            </tr>
+            <tr>
+                <th>Credit Card Debt</th>
+                <td>@Model.CreditCardDept</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

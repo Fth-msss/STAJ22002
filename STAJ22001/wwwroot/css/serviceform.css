@@ -1,0 +1,114 @@
+﻿.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+
+.header-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+    .form-group label {
+        width: 120px; /* Fixed width for labels */
+        margin-right: 15px; /* Space between label and input */
+        text-align: right; /* Align text to the right */
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-color: gray;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+
+    .form-group select:focus {
+        border-width:1px;
+
+    }
+
+
+    .form-group textarea {
+        height: 100px; /* Set height */
+        resize: none;
+        border-radius: 5px;
+        border-color: gray
+    }
+
+    .form-group button {
+        display: flex;
+        justify-content: center; /* Center the button horizontally */
+        width: 100%;
+        border-radius:5px;
+}
+
+    .form-group input:hover,.form-group textarea:hover {
+        border-color: blueviolet;
+    }
+
+    .form-group textarea:focus {
+        border-color: yellow;
+        box-shadow: 0 0 3px rgba(85, 85, 85, 0.5);
+    }
+
+    .form-group button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+
+
+
+   
