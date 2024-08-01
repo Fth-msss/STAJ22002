@@ -14,9 +14,10 @@ function createTable() {
     //dont remove the first one as its the header
  
 
-    for (var i = 1; i < table.rows.length; i++) {
-        table.deleteRow(i);
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
     }
+    console.log(table.rows);
 
     for (var i = 0; i < rowsInput; i++)
     {

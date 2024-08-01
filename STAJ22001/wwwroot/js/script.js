@@ -33,6 +33,9 @@ function createTable() {
 
     for (var i = 1; i < table.rows.length; i++) {
         table.deleteRow(i);
+        console.log(table.rows());
+        
+
     }
 
     for (var i = 0; i < rowsInput; i++) {

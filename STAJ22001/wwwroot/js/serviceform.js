@@ -1,17 +1,33 @@
-﻿// Example JavaScript to handle form submission
+﻿
 
 function SubmitButtonClick() {
 
+  
 
-    var formData = new FormData(this);
-    var data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+    var form = document.getElementById('myForm');
 
-    // Do something with the data (e.g., log it, send it to a server)
-    console.log(data);
+    // Check if form exists
+    if (!form) {
+        console.error('Form not found');
+        return;
+    }
 
-    // For demonstration purposes
-    alert('Form submitted! Check the console for the data.');
+    // Create a FormData object from the form element
+    var formData = new FormData(form);
+
+    var rawdata = {}
+    for (var pair of formData.entries()) {
+        rawdata[pair[0]]=pair[1];
+        console.log(pair[0] + ': ' + pair[1]);
+    }
+
+    console.log(rawdata);
+
+    // Log the form data for demonstration purposes
+    //for (var pair of formData.entries()) {
+    //    console.log(pair[0] + ': ' + pair[1]);
+    //}
+
+    // Add your logic here to handle form submission, e.g., using fetch or XMLHttpRequest
+    alert("Form data processed!");
 }
