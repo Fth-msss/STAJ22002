@@ -44,16 +44,19 @@ input[type=number] {
 /*custom from now on*/
 
 .container {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px; /* Add some space between the divs */
     padding: 20px;
+    width: 100%;
 }
 
-.container-maincontainer
-{
-
+.container-maincontainer {
 
 }
+
+.container-buttons{}
 
 
 
@@ -107,11 +110,12 @@ td:nth-child(3) {
     border-bottom: 1px solid #aaaaaa;
     padding: 10px;
     min-width: 200px;
-    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1);
     border-right: none;
 }
 
-
+td:nth-child(4) {
+    border-bottom: 1px solid #aaaaaa;
+}
 
 
 
