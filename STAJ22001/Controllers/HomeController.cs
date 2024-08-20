@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using STAJ22001.Data;
 using STAJ22001.Models;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace STAJ22001.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -18,13 +21,14 @@ namespace STAJ22001.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Privacy()
         {
+            var customers = _context.MockServiceDefinition.ToList();
 
 
-            var TestDataModel = new TestDataModel("Fatih", 23123, "123 TL", 123432);
+            return View(customers);
 
-            return View(TestDataModel);
         }
 
         public IActionResult Anasayfa()

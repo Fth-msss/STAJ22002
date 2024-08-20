@@ -1,6 +1,8 @@
-﻿namespace STAJ22001.Models
+﻿using System.ComponentModel;
+
+namespace STAJ22001.Models
 {
-    public class Customers
+    public class CustomerViewModel
     {
         public int CustomerId { get; set; }
         public string? ServiceName { get; set; }
@@ -15,6 +17,5 @@
         public string? CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string? UpdatedBy { get; set; }
-        
     }
 }
