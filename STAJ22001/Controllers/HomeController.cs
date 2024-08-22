@@ -18,7 +18,10 @@ namespace STAJ22001.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var customers = _context.MockServiceDefinition.ToList();
+
+
+            return View(customers);
         }
 
         [HttpGet]
@@ -33,7 +36,10 @@ namespace STAJ22001.Controllers
 
         public IActionResult Anasayfa()
         {
-            return View();
+            var customers = _context.MockServiceDefinition.ToList();
+
+
+            return View(customers);
         }
 
         public IActionResult Yeniservis()
