@@ -6,15 +6,8 @@
 
 async function deleteTableRowButton(param)
 {
-    const response = await fetch(`/Customer/Delete/${param}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
 
     console.log("delete", param);
-    console.log("delete", response);
 
 
 }

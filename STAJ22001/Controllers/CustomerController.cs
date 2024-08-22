@@ -22,19 +22,5 @@ namespace STAJ22001.Controllers
             return View(customers);
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
-        {
-            var item = _context.MockServiceDefinition.Find(id);
-            if (item == null)
-            {
-                return NotFound();
-            }
-
-            _context.MockServiceDefinition.Remove(item);
-            _context.SaveChanges();
-
-            return Ok();
-        }
     }
 }
