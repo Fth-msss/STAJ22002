@@ -14,6 +14,6 @@ namespace STAJ22001.Data
 
         }
 
-        public DbSet<MockServiceDefinition> MockServiceDefinition { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

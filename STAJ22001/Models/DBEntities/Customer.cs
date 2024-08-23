@@ -3,8 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace STAJ22001.Models
 {
-    public class MockServiceDefinition
+    public class Customer
     {
+        //this is customerviewmodel
+        //this is supposed to display data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
