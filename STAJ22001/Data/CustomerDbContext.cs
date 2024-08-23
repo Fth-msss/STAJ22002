@@ -5,11 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace STAJ22001.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class CustomerDbContext : DbContext
     {
       
 
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+        public CustomerDbContext(DbContextOptions options) : base(options)
         {
 
         }

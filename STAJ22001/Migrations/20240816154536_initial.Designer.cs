@@ -11,7 +11,7 @@ using STAJ22001.Data;
 
 namespace STAJ22001.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(CustomerDbContext))]
     [Migration("20240816154536_initial")]
     partial class initial
     {

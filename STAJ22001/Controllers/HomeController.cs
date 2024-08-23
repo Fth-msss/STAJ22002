@@ -8,9 +8,9 @@ namespace STAJ22001.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext _context;
+        private readonly CustomerDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, CustomerDbContext context)
         {
             _logger = logger;
             _context = context;
@@ -42,8 +42,22 @@ namespace STAJ22001.Controllers
             return View(customers);
         }
 
+        [HttpGet]
         public IActionResult Yeniservis()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Yeniservis(MockServiceDefinition customerData)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+            }
             return View();
         }
 
@@ -53,12 +67,7 @@ namespace STAJ22001.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult CustomerInfo()
-        {
-            var TestDataModel = new TestDataModel("Fatih", 23123, "123 TL", 123432);
 
-            return View(TestDataModel);
-        }
 
         
 
