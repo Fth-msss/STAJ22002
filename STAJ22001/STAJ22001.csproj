@@ -7,17 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Edit.cshtml" />
     <Content Remove="wwwroot\js\script.js" />
     <Content Remove="wwwroot\js\tablesearch.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\Edit.cshtml" />
     <_ContentIncludedByDefault Remove="wwwroot\css\serviceform.css" />
     <_ContentIncludedByDefault Remove="wwwroot\js\script.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\tablesearch.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Home\Edit.cshtml" />
     <None Include="wwwroot\js\script.js" />
     <None Include="wwwroot\js\tablesearch.js" />
   </ItemGroup>
@@ -29,6 +32,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Home\Edit.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 
 namespace STAJ22001.Models
 {
-    public class CustomerViewModel : Controller
+    public class CustomerViewModel
     {
         public int Id { get; set; }
         public string Service { get; set; } = "";

@@ -12,7 +12,7 @@
 <body>
 
     <div class="container">
-        <input class="input-searchbar" type="text" id="userInput" placeholder="search">
+        <input class="input-searchbar" type="text" id="userInput" placeholder="real page here">
         <div class="btn-group">
             <button class="button-45" onclick="searchButtonClick()"><i class="bi bi-search"></i></button>
             <a href="@Url.Action("Yeniservis", "Home")" class="button-45"><i class="bi bi-file-earmark-plus"></i></a>
@@ -39,17 +39,18 @@
 
 
                 <tr>
-                    <td>@customer.ServiceName</td>
+                    <td>@customer.Service</td>
                     <td>@customer.Type</td>
                     <td>@customer.Path</td>
                     <td>
                         <div class="btn-group">
-                            <button class="button-45" onclick="edittableRowButton('@customer.CustomerId')">
+                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@customer.Id" class="button-45 btn-primary">
                                 <i class="bi bi-pencil"></i>
-                            </button>
-                            <button class="button-45" onclick="deleteTableRowButton('@customer.CustomerId')">
+                            </a>
+
+                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@customer.Id" class="button-45 btn-primary">
                                 <i class="bi bi-trash"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>

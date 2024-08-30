@@ -1,8 +1,20 @@
-﻿@{
+﻿@model STAJ22001.Models.CustomerViewModel
+
+@{
     ViewData["Title"] = "Yeniservis";
+    var successMessage = TempData["successmessage"]?.ToString();
+    var errorMessage = TempData["errormessage"]?.ToString();
 }
 
+@if (!string.IsNullOrWhiteSpace(@errorMessage))
+{
+    <div class="alert alert-success">
+        <strong>error</strong>@errorMessage
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+    </div>
+    
 
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,14 +27,14 @@
 <body>
 
     <div class="form-container">
-        <form id="myForm">
+        <form action="Yeniservis" method="post" autocomplete="off">
             <div class="form-group">
                 <label for="serviceName">Service Name</label>
-                <input type="text" id="serviceName" name="serviceName" required>
+                <input type="text" id="Service" name="Service" required>
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
-                <select id="type" name="type" required>
+                <select id="Type" name="Type" required>
                     <option value="">Select a type</option>
                     <option value="type1">Type 1</option>
                     <option value="type2">Type 2</option>
@@ -31,32 +43,31 @@
             </div>
             <div class="form-group">
                 <label for="path">Path</label>
-                <input type="text" id="path" name="path"  required>
+                <input type="text" id="Path" name="Path" required>
             </div>
 
             <div class="form-group">
-                <label for="path">Query String</label>
-                <textarea type="text" id="querystring" name="querystring" required></textarea>
+                <label for="querystring">Query String</label>
+                <textarea type="text" id="Query" name="Query" required></textarea>
             </div>
 
             <div class="form-group">
-                <label for="path">Header</label>
-                <textarea type="text" id="header" name="header" required></textarea>
+                <label for="header">Header</label>
+                <textarea type="text" id="Header" name="Header" required></textarea>
             </div>
 
             <div class="form-group">
-                <label for="path">Request Body</label>
-                <textarea type="text" id="requestbody" name="requestbody" required></textarea>
+                <label for="requestbody">Request Body</label>
+                <textarea type="text" id="RequestBody" name="RequestBody" required></textarea>
             </div>
 
             <div class="form-group">
-                <label for="path">Response Body</label>
-                <textarea  id="responsebody" name="responsebody" class= "large"  required></textarea>
+                <label for="responsebody">Response Body</label>
+                <textarea type="text" id="ResponseBody" name="ResponseBody" class="large" required></textarea>
             </div>
 
             <div class="form-group">
-
-                <button type="button" onclick="SubmitButtonClick()">send</button>
+                <button type="submit" class="btn btn-primary">Send</button>
             </div>
         </form>
     </div>
@@ -64,6 +75,9 @@
     
     @section Scripts {
         <script src="~/js/serviceform.js"></script>
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
     }
 </body>
 </html>
