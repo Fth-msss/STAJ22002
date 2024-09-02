@@ -130,7 +130,7 @@ namespace STAJ22001.Controllers
                         IsEnabled = customer.IsEnabled
 
                     };
-                    return View("Edit",customerView);
+                    return View(customerView);
                 }
                 else
                 {

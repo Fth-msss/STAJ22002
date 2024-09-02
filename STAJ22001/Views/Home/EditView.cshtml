@@ -11,14 +11,16 @@
         <strong>error</strong>@errorMessage
         <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
     </div>
+
+
 }
 
 <h3>@ViewData["Title"]</h3>
 <hr/>
-<form asp-action="Edit" method="post">
+<form asp-controller="Home" action="Edit" method="post">
     <div class="mb-3">
         <label class="form-label">Id</label>
-        <input type="text" class="form-control" asp-for="Id" readonly />
+        <input type="text" class="form-control" asp-for="Id" readonly/>
     </div>
     <div class="mb-3">
         <label class="form-label">service</label>
@@ -45,19 +47,18 @@
         <input type="text" class="form-control" asp-for="RequestBody" />
         <span asp-validation-for="RequestBody" class="text-danger"></span>
     </div>
-    <div class="mb-3">
+     <div class="mb-3">
         <label class="form-label">ResponseBody</label>
         <input type="text" class="form-control" asp-for="ResponseBody" />
         <span asp-validation-for="ResponseBody" class="text-danger"></span>
     </div>
-    <div class="mb-3">
+     <div class="mb-3">
         <label class="form-label">Header</label>
         <input type="text" class="form-control" asp-for="Header" />
         <span asp-validation-for="Header" class="text-danger"></span>
     </div>
 
-
     <div class="d-grid">
-        <button type="submit" class="btn btn-success">update</button>
+      <button type="submit" class="btn btn-success">update</button>
     </div>
 </form>
