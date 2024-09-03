@@ -1,0 +1,57 @@
+﻿@model STAJ22001.Models.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+    var errorMessage = TempData["errormessage"]?.ToString();
+}
+<h3>@ViewData["Title"]</h3>
+<hr />
+
+@if (!string.IsNullOrWhiteSpace(@errorMessage))
+{
+    <div class="alert alert-success">
+        <strong>error</strong>@errorMessage
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+
+<form asp-action="Delete" method="post">
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">service</label>
+        <input type="text" class="form-control" asp-for="Service" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        <input type="text" class="form-control" asp-for="Type" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Path</label>
+        <input type="text" class="form-control" asp-for="Path" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Query</label>
+        <input type="text" class="form-control" asp-for="Query" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">RequestBody</label>
+        <input type="text" class="form-control" asp-for="RequestBody" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ResponseBody</label>
+        <input type="text" class="form-control" asp-for="ResponseBody" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Header</label>
+        <input type="text" class="form-control" asp-for="Header" readonly />
+    </div>
+
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-danger" onclick="return function('Are you sure')">Delete</button>
+    </div>
+</form>

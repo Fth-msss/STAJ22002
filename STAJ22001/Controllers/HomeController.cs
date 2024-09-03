@@ -186,6 +186,76 @@ namespace STAJ22001.Controllers
          
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var customer = _context.Customers.SingleOrDefault(x => x.CustomerId == id);
+
+                if (customer != null)
+                {
+                    var customerView = new CustomerViewModel()
+                    {
+                        Id = customer.CustomerId,
+                        Service = customer.ServiceName,
+                        Type = customer.Type,
+                        Path = customer.Path,
+                        Query = customer.QueryString,
+                        Header = customer.Header,
+                        RequestBody = customer.RequestBody,
+                        ResponseBody = customer.ResponseBody,
+                        CreatedBy = customer.CreatedBy,
+                        UpdatedDate = customer.UpdatedDate,
+                        CreatedDate = customer.CreatedDate,
+                        UpdatedBy = customer.UpdatedBy,
+                        IsEnabled = customer.IsEnabled
+
+                    };
+                    return View(customerView);
+                }
+                else
+                {
+                    TempData["errorMessage"] = $"customer details not avaible with id: {id}";
+                    return RedirectToAction("Index");
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                TempData["errorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Delete(CustomerViewModel model)
+        {
+            try
+            {
+                var customer = _context.Customers.SingleOrDefault(x => x.CustomerId == model.Id);
+
+                if (customer != null)
+                {
+                    _context.Customers.Remove(customer);
+                    _context.SaveChanges();
+                    TempData["successMessage"] = "Customer deleted";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["errorMessage"] = $"customer details not avaible with id: {model.Id}";
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
