@@ -9,9 +9,9 @@
 
 @if (!string.IsNullOrWhiteSpace(@errorMessage))
 {
-    <div class="alert alert-success">
+    <div class="alert alert-danger">
         <strong>error</strong>@errorMessage
-        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
@@ -52,6 +52,6 @@
 
 
     <div class="d-grid">
-        <button type="submit" class="btn btn-danger" onclick="return function('Are you sure')">Delete</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure')">Delete</button>
     </div>
 </form>

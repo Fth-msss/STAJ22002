@@ -7,21 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\EditView.cshtml" />
-    <Content Remove="wwwroot\js\script.js" />
-    <Content Remove="wwwroot\js\tablesearch.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\serviceform.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\js\script.js" />
-    <_ContentIncludedByDefault Remove="wwwroot\js\tablesearch.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Home\EditView.cshtml" />
-    <None Include="wwwroot\js\script.js" />
-    <None Include="wwwroot\js\tablesearch.js" />
   </ItemGroup>
 
   <ItemGroup>

@@ -42,22 +42,9 @@ namespace STAJ22001.Controllers
             return View();
         }
 
-        [HttpGet]
         public IActionResult Privacy()
         {
-            var customers = _context.Customers.ToList();
-
-
-            return View(customers);
-
-        }
-
-        public IActionResult Anasayfa()
-        {
-            var customers = _context.Customers.ToList();
-
-
-            return View(customers);
+            return View();
         }
 
         [HttpGet]
@@ -256,17 +243,10 @@ namespace STAJ22001.Controllers
             }
         }
 
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-
-        
-
-
     }
 }
