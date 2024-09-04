@@ -75,7 +75,7 @@ namespace STAJ22001.Controllers
                     _context.Customers.Add(customer);
                     _context.SaveChanges();
                     TempData["successMessage"] = "creation successful";
-                    return RedirectToAction("Yeniservis");
+                    return RedirectToAction("Index");
                 }
                 else
                 {

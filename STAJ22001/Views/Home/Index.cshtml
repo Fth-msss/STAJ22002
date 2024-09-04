@@ -1,6 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var successMessage = TempData["successMessage"]?.ToString();
+    var errorMessage = TempData["errorMessage"]?.ToString();
 }
+
+@if (!string.IsNullOrWhiteSpace(@successMessage))
+{
+    <div class="alert alert-success">
+        <strong>Success</strong>@successMessage
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+    </div>
+    
+}
+
+else if (!string.IsNullOrWhiteSpace(@errorMessage))
+{
+<div class="alert alert-danger">
+    <strong>error</strong>@errorMessage
+</div>
+<button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+}
+
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +50,7 @@
                 <th>Servis Adı</th>
                 <th>Method</th>
                 <th>Açıklama</th>
-                <th></th>
+                <th>&nbsp; </th>
             </tr>
 
             @foreach (var customer in Model)
@@ -54,6 +74,7 @@
                         </div>
                     </td>
                 </tr>
+
             }
 
             <!-- Placeholder row (hidden by default) -->

@@ -76,55 +76,63 @@ input[type=number] {
     }
 
 
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: fit-content !important;
-        height: 100%;
-        table-layout: fixed;
-        display: grid;
-        grid-template-columns: 100% 100% 100% 5% 5%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        float: left;
-    }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: fit-content !important;
+    table-layout: fixed;
+
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100% 100% 100% 5% 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+}
 /*header*/
 th {
     border: none; /* Remove border for headers */
     text-align: left;
+    
     padding: 8px;
     background-color: forestgreen;
     color: white;
 }
 
+    th:nth-child(1),
+    th:nth-child(2),
+    th:nth-child(3) {
+        min-width: 140px;
+    }
 
-/* data cell */
-td:nth-child(1),
-td:nth-child(2) {
-    border-bottom: 1px solid #aaaaaa;
-    padding: 10px;
-    min-width: 200px;
-    border-right: none;
-}
+    th:nth-child(4) {
+        text-align: right;
+        width: fit-content;
+        min-width: 40px;
+    }
 
-td:nth-child(3) {
-    border-bottom: 1px solid #aaaaaa;
-    padding: 10px;
-    min-width: 200px;
-    border-right: none;
-}
+
+
+    /* data cell */
+    td:nth-child(1),
+    td:nth-child(2),
+    td:nth-child(3) {
+        border-bottom: 1px solid #aaaaaa;
+        padding: 10px;
+        min-width: 200px;
+        border-right: none;
+    }
+
 
 td:nth-child(4) {
     border-bottom: 1px solid #aaaaaa;
+    text-align: right;
+}
+
+td:last-child {
+    text-align: right;
 }
 
 
-
-
-
-
-tr:nth-child(odd) {
-    background-color: #FFFFFF;
-}
 
 tr:nth-child(even) {
     background-color: #F2F2F2;
