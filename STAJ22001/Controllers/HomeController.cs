@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using STAJ22001.Data;
+using STAJ22001.Data.customerdata;
 using STAJ22001.Models;
 using System.Diagnostics;
 
 namespace STAJ22001.Controllers
+
 {
+    //this single controller governs both database operations and view pages of this project
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,7 +18,7 @@ namespace STAJ22001.Controllers
             _logger = logger;
             _context = context;
         }
-
+        
         public IActionResult Index()
         {
             var customers = _context.Customers.ToList();
@@ -39,11 +42,6 @@ namespace STAJ22001.Controllers
                 }
                 return View(customerList);
             }
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 
@@ -242,6 +240,36 @@ namespace STAJ22001.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        //an api call that finds data on table and returns another data on the same row
+        [HttpGet]
+        public IActionResult Getpost(string deneme, string deneme2)
+        {
+            string search = "{" + $"{deneme},{deneme2}" + "}";
+
+            if (string.IsNullOrEmpty(search))
+            {
+                return BadRequest("The 'search' string is required.");
+            }
+
+            var item = _context.Customers
+                .Where(i => i.Type=="Get" && i.RequestBody == search)
+                .FirstOrDefault();
+
+            if (item == null)
+            {
+                return NotFound("No matching item found.");
+            }
+
+            return Ok(item.ResponseBody);
+        }
+
+        [HttpPost] public IActionResult Getpost([FromBody] string search) 
+        {
+           return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

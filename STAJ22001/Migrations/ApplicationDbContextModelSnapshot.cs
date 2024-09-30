@@ -57,7 +57,8 @@ namespace STAJ22001.Migrations
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Type")
                         .IsRequired()

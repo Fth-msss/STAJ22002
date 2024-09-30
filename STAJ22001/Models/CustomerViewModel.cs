@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿
 namespace STAJ22001.Models
 {
+    //the purpose of this class is to be a bridge between the databasemodel and views
+    //actual mapping is done in customer class
     public class CustomerViewModel
     {
         public int Id { get; set; }

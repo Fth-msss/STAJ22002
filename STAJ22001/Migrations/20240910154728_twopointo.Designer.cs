@@ -12,8 +12,8 @@ using STAJ22001.Data;
 namespace STAJ22001.Migrations
 {
     [DbContext(typeof(CustomerDbContext))]
-    [Migration("20240818150946_updateddatabase")]
-    partial class updateddatabase
+    [Migration("20240910154728_twopointo")]
+    partial class twopointo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace STAJ22001.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("STAJ22001.Models.MockServiceDefinition", b =>
+            modelBuilder.Entity("STAJ22001.Models.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,8 @@ namespace STAJ22001.Migrations
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -74,7 +75,7 @@ namespace STAJ22001.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("MockServiceDefinition");
+                    b.ToTable("Customers");
                 });
 #pragma warning restore 612, 618
         }

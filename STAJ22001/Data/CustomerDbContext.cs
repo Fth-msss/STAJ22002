@@ -1,17 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using STAJ22001.Models;
-using Microsoft.Extensions.Logging;
+using STAJ22001.Data.customerdata;
+using System.Reflection;
 
 namespace STAJ22001.Data
 {
-    public class CustomerDbContext : DbContext
+    //this is how the project knows what a database is
+    public class CustomerDbContext(DbContextOptions<CustomerDbContext> options) : DbContext(options)
     {
-      
 
-        public CustomerDbContext(DbContextOptions options) : base(options)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Customer> Customers { get; set; }
